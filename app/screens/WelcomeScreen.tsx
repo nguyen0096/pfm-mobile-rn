@@ -2,22 +2,26 @@ import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import {
+  Button,
   Text,
 } from "app/components"
 import { isRTL } from "../i18n"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
-import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+// import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+import { useStores } from "app/models"
 
 const welcomeLogo = require("../../assets/images/logo.png")
 const welcomeFace = require("../../assets/images/welcome-face.png")
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
+interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> { }
 
 export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
 ) {
 
-  const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+  const { userStore: { logout } } = useStores();
+
+  // const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
 
   return (
     <View style={$container}>
@@ -31,11 +35,17 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         />
         <Text tx="welcomeScreen.exciting" preset="subheading" />
         <Image style={$welcomeFace} source={welcomeFace} resizeMode="contain" />
+        <Button tx="logout" onPress={logout} style={$buttonStyle} />
+      </View>
+
+
+      {/* <View>
+        <Text>Test token: ${authToken}</Text>
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]}>
         <Text tx="welcomeScreen.postscript" size="md" />
-      </View>
+      </View> */}
     </View>
   )
 })
@@ -53,16 +63,17 @@ const $topContainer: ViewStyle = {
   paddingHorizontal: spacing.lg,
 }
 
-const $bottomContainer: ViewStyle = {
-  flexShrink: 1,
-  flexGrow: 0,
-  flexBasis: "43%",
-  backgroundColor: colors.palette.neutral100,
-  borderTopLeftRadius: 16,
-  borderTopRightRadius: 16,
-  paddingHorizontal: spacing.lg,
-  justifyContent: "space-around",
-}
+// const $bottomContainer: ViewStyle = {
+//   flexShrink: 1,
+//   flexGrow: 0,
+//   flexBasis: "43%",
+//   backgroundColor: colors.palette.neutral100,
+//   borderTopLeftRadius: 16,
+//   borderTopRightRadius: 16,
+//   paddingHorizontal: spacing.lg,
+//   justifyContent: "space-around",
+// }
+
 const $welcomeLogo: ImageStyle = {
   height: 88,
   width: "100%",
@@ -80,4 +91,9 @@ const $welcomeFace: ImageStyle = {
 
 const $welcomeHeading: TextStyle = {
   marginBottom: spacing.md,
+}
+
+const $buttonStyle: ViewStyle = {
+  borderRadius: 50,
+  width: 100,
 }

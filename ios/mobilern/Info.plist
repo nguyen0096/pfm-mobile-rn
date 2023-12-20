@@ -34,6 +34,12 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
+          <string>com.googleusercontent.apps.778811515969-693678ju5ckcbk6huh4bpgnc2qc3g5b4</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
           <string>exp+mobile-rn</string>
         </array>
       </dict>

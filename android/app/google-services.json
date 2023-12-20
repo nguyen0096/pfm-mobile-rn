@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "778811515969",
+    "project_id": "personal-finance-managem-db0c6",
+    "storage_bucket": "personal-finance-managem-db0c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778811515969:android:2cfe6abcc3bcabc6cf12c0",
+        "android_client_info": {
+          "package_name": "com.mana.pfm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778811515969-4s4ke8uiqaphptnhldjl63qgokhsgo4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX6yCRz2HA2OaLcXsIAR-fqYQkF_94maA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778811515969-4s4ke8uiqaphptnhldjl63qgokhsgo4n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778811515969-693678ju5ckcbk6huh4bpgnc2qc3g5b4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mana.pfm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
